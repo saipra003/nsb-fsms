@@ -1,0 +1,35 @@
+{% extends "base_home.html" %}
+{% load static %}
+
+
+
+
+{%block head-title %} Welcome | {% endblock %}
+
+{% block jumbotron %}
+  <div class="jumbotron jumbotron-fluid jumbotron-main" id="jumbotron-1" style="position: relative;">
+      <div class="container text-center">
+        <h2> FSMS - National Science Bowl 2021 -Practices--->  Task Management</h2>
+      </div>
+  </div>
+{% endblock%}
+
+  
+{%block content %}
+	<div class="container container-fluid col-12">
+
+		<div class="row">
+			<div class="column">
+  			<img src="{% static 'images/nsb_fsms_quote2.jpg' %}" alt="Img" height="300" width="300">
+			</div>
+			<div class="column">
+  			<img src="{% static 'images/nsb_fsms_quote3.jpg' %}" alt="Img" height="400" width="400">
+			</div>
+			<div class="column">
+  			<img src="{% static 'images/nsb_fsms_quote1.jpg' %}" alt="Img" height="300" width="300">
+			</div>
+	</div>
+
+	</div>
+{% endblock %}
+.

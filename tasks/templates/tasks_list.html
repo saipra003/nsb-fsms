@@ -1,0 +1,53 @@
+{% extends "base_app.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{%block head-title %} | NSB-FSMS {% endblock %}
+<!-- content till here is taken from the base_app.html. Rest of the below content is for this template or html -->
+
+{% block form-title %} Tasks {% endblock %}
+{% block content %}
+<div id="contents class = container-fluid">
+	<div id="tagline" class="clearfix table-responsive">
+		<a href="{% url 'tasks:tasks_create' %}">Add Task</a>  
+		<table class="table table-striped table-bordered table-fixed table-hover table-condensed" style="border:0px; " id="tasks_tab1">
+			<thead>
+			    <tr>
+			      <th width="">Edit</th> 
+			      <th width="">Id</th>
+			      <th width="">Set</th>
+			      <th width="">Rnd</th>
+			      <th width="">Q#</th>
+			      <th width="">Topic</th>
+			      <th width="">Description</th>
+			      <th width="">Owner</th>
+			      <th width="">Status</th>
+			      <th width="">Date Created</t>
+				  <th width="">Remarks</th>			      
+			    </tr>
+		 	</thead>
+		  	<tbody class='tbody'>
+		    	{% for tasks in object_list %}
+				 <tr>					    	    
+					    <td><a href="{% url 'tasks:tasks_edit' tasks.task_id %}">edit</a></td>
+					    <td>{{ tasks.task_id}}</td>
+					    <td>{{ tasks.set_num|default_if_none:"&nbsp;"}}</td>
+					    <td>{{ tasks.round_num|default_if_none:"&nbsp;"}}</td>
+					    <td>{{ tasks.question_num|default_if_none:"&nbsp;"}}</td>
+					    <td>{{ tasks.topic}}</td>
+					    <td>{{ tasks.description |default_if_none:"&nbsp;"}}</td>
+					    <td>{{ tasks.owner |default_if_none:"&nbsp;"}}</td>
+					    <td>{{ tasks.status}}</td>
+					    <td>{{ tasks.create_date|default_if_none:"&nbsp;" }}</td>
+						<td>{{ tasks.remarks|default_if_none:"&nbsp;" }}</td>
+					</tr>
+				{% endfor %}
+		  </tbody>
+			</table>
+			
+		</div>
+
+		<a href="{% url 'tasks:tasks_create' %}">Add Task</a> 
+	</div >
+
+{% endblock %}

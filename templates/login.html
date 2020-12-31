@@ -1,0 +1,45 @@
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+<html>
+<head>
+<!-- <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-theme.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/signin.css' %}" /> -->
+    {% include 'head_css.html' %}
+</head>
+
+{% include 'navbar.html' %}
+ 
+<body>
+ <div class="container">
+ 
+      <form class="form-signin" action="login" method="post" id="login-form">{% csrf_token %}
+        <h2 class="form-signin-heading">{{ message }}</h2>
+        
+        <label for="id_username" >User Name: </label>
+        <input type="text" name="username" id="id_username" class="required form-control col-sm-3" required autofocus>
+       
+        <label for="id_password">Password: </label>
+        <input type="password" name="password" id="id_password" class="required form-control col-sm-3" required>
+        <!-- Commented by msb as needed only for std app and not now  -->
+        <!-- <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div> -->
+        <br/>
+        <button class="btn btn-sm btn-primary" type="submit">Sign in</button>
+      </form>
+ 
+    </div> <!-- /container -->
+ 
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

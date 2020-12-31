@@ -1,0 +1,49 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Saipra">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <title> Welcome NSB-FSMS {% block head-title %} {% endblock %} </title>
+
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/navbar-static/">
+
+    {% include 'head_css.html' %}
+    {% include 'javascript.html' %}    
+    {{ form.media }}
+    
+  </head>
+  <body>
+    {% include 'navbar.html' %}
+
+    <div class="container container-fluid col-12">
+      <img src="{% static 'images/nsb_fsms.png' %}" alt="Img" height="100" width="200">
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <h2 class="mt-2">{% block form-title%} {% endblock %}</h2>
+          <hr class="mt-0 mb-4">
+          {% block content %}
+            <!-- Include the content in the HTML of the coresponding App Forms or the HTMLs -->
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+
+    <div id="footer" class ="footer navbar-fixed-bottom">
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">
+        <a href=#> Custom Footer here </a>
+        
+    </div>
+      <!-- Copyright -->    
+  </div>
+
+  </body>
+</html>
